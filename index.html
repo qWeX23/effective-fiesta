@@ -1,20 +1,36 @@
-<img src="vipertruck.jpg" style="width:500px;height:600px;">
+<img src="vipertruck.jpg" style="width:50%;height:50%;">
 <h1 id="text"> Never</h1>
-<script>
+<script type="text/javascript">
+	function timeSince(date) {
+	  var seconds = Math.floor((new Date() - date) / 1000);
+
+	  var interval = Math.floor(seconds / 31536000);
+
+	  if (interval > 1) {
+		return interval + " years";
+	  }
+	  interval = Math.floor(seconds / 2592000);
+	  if (interval > 1) {
+		return interval + " months";
+	  }
+	  interval = Math.floor(seconds / 86400);
+	  if (interval > 1) {
+		return interval + " days";
+	  }
+	  interval = Math.floor(seconds / 3600);
+	  if (interval > 1) {
+		return interval + " hours";
+	  }
+	  interval = Math.floor(seconds / 60);
+	  if (interval > 1) {
+		return interval + " minutes";
+	  }
+	  return Math.floor(seconds) + " seconds";
+	}
   function run(){
-    while(true){
-      var currentTime = new Date();
-      var lastbreakdown = new Date(2019,01, 11, 08, 20, 00, 00);
-      var one_day=1000*60*60*24;
-
-      var ctMs = currentTime.getTime();
-      var lbdMs = lastbreakdown.getTime();
-
-      var diff = lbdMs - ctMs;
-      var days = diff/one_day;
-
-      document.getElementById("text").innerHTML = days+'days since last breakdown';
-    }
+  alert('ok');
+      document.getElementById("text").innerHTML = timeSince(new Date(2019,00, 11, 08, 20, 00, 00))+ ' since last breakdown';    
   }
+  
   window.onload = run;
 </script>
