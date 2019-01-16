@@ -1,2 +1,19 @@
 <img src="vipertruck.jpg" style="width:500px;height:600px;">
-<h1> Never</h1>
+<h1 id="text"> Never</h1>
+<script>
+  while(true){
+    var currentTime = new Date();
+    var lastbreakdown = new Date(2019,01, 11, 08, 20, 00, 00);
+    var one_day=1000*60*60*24;
+
+    var ctMs = currentTime.getTime();
+    var lbdMs = lastbreakdown.getTime();
+    
+    var diff = lbdMs - ctMs;
+    var days = diff/one_day;
+    
+    document.getElementById("text").innerHTML = days;
+    
+  }
+  
+</script>
